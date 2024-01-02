@@ -28,14 +28,18 @@ public class MailServiceImpl implements MailService {
     @Override
     public Mail saveMail(MailDto mailDto) {
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        Mail mail = new Mail();
-        mail.setName(mailDto.getName());
-        mail.setSubject(mailDto.getSubject());
-        mail.setEmail(mailDto.getEmail());
-        mail.setMessage(mailDto.getMessage());
-        mail.setCreate_time(timestamp);
-        mailRepository.save(mail);
-        return mail;
+        if(mailDto == null){
+            return null;
+        }else {
+            Mail mail = new Mail();
+            mail.setName(mailDto.getName());
+            mail.setSubject(mailDto.getSubject());
+            mail.setEmail(mailDto.getEmail());
+            mail.setMessage(mailDto.getMessage());
+            mail.setCreate_time(timestamp);
+            mailRepository.save(mail);
+            return mail;
+        }
     }
 
     @Override
@@ -45,10 +49,10 @@ public class MailServiceImpl implements MailService {
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
 
             mimeMessageHelper.setFrom(fromEmail);
-            mimeMessageHelper.setTo(mail.getEmail());
+            mimeMessageHelper.setTo("letanhung711@gmail.com");
             mimeMessageHelper.setSubject(mail.getSubject() + " - LeHung Blog");
 
-            String body = "Name: " + mail.getName() +",\n"
+            String body = "Name: " + mail.getName() +"\n"
                     + "Email: " + mail.getEmail() + "\n"
                     + "Send date: " + dateTimeService.DateFormatTime(mail.getCreate_time().toString()) +"\n\n"
                     + "Message: " + mail.getMessage() + "\n\n"

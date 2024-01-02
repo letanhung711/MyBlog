@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title th:text="${title}"></title>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 100px;
+        }
+
+        h1 {
+            color: #378C3F;
+        }
+
+        #thankyou-message {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        #back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #378C3F;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Thank You!</h1>
+<p id="thankyou-message">Thank you for contact me.</p>
+<a th:href="@{/}" id="back-button">Back to Home</a>
+</body>
+</html>

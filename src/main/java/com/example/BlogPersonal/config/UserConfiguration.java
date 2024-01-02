@@ -30,7 +30,7 @@ public class UserConfiguration extends WebSecurityConfigurerAdapter {
         DaoAuthenticationProvider provider =new DaoAuthenticationProvider();
         provider.setUserDetailsService(userDetailsService());
         provider.setPasswordEncoder(passwordEncoder());
-        provider.setHideUserNotFoundExceptions(false); // Hiển thị thông báo lỗi rõ ràng
+        provider.setHideUserNotFoundExceptions(false);
         return provider;
     }
 
@@ -50,7 +50,8 @@ public class UserConfiguration extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                     .antMatchers("/").permitAll()
-                    .antMatchers("/pages/**").permitAll()
+                    .antMatchers("/page/**").permitAll()
+                    .antMatchers("/send/**").permitAll()
                     .antMatchers("/admin/**").hasAuthority("ADMIN")
                     .and()
                 .formLogin()
