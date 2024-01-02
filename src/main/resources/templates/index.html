@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="/components/component/head">
+</head>
+<body id="top">
+    <!--Header -->
+    <header th:replace="/components/component/header"></header>
+    <!-- Main -->
+    <div class="page-content">
+        <div>
+            <div class="profile-page">
+                <div class="wrapper">
+                    <div class="page-header page-header-small" filter-color="green">
+                        <div class="page-header-image" data-parallax="true" style="background-image: url('image/cc-bg-1.jpg')"></div>
+                        <div class="container">
+                            <div class="content-center">
+                                <div class="cc-profile-image"><a href="#"><img src="image/le-tan-hung.jpg" alt="Image"/></a></div>
+                                <div class="h2 title">LE TAN HUNG</div>
+                                <p class="category text-white">Java Web Developer</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary" href="#" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Blog</a>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <div class="container">
+                                <div class="button-container">
+                                    <a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.facebook.com/tanhungg2002" rel="tooltip" title="Follow me on Facebook"><i class="fa fa-facebook"></i></a>
+                                    <a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="Follow me on Twitter"><i class="fa fa-twitter"></i></a>
+                                    <a class="btn btn-default btn-round btn-lg btn-icon" href="https://github.com/letanhung711" rel="tooltip" title="Follow me on Github"><i class="fa fa-github"></i></a>
+                                    <a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.instagram.com/asdfghjkl07_11/" rel="tooltip" title="Follow me on Instagram"><i class="fa fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- About -->
+            <div th:replace="/components/component/about"></div>
+            <!-- Experience -->
+            <div th:replace="/components/component/experience"></div>
+            <!-- Education -->
+            <div th:replace="/components/component/education"></div>
+            <!-- Skill -->
+            <div th:replace="/components/component/skill"></div>
+            <!-- Contact -->
+            <div th:replace="/components/component/contact"></div>
+        </div>
+    </div>
+
+    <footer th:replace="/components/component/footer"></footer>
+    <!-- Javascript -->
+    <div th:replace="/components/component/scripts"></div>
+</body>
+</html>
