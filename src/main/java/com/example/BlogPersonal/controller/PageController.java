@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping(value = "/page")
+@RequestMapping(path = "/page")
 public class PageController {
     @RequestMapping(value = "/404", method = RequestMethod.GET)
     private String showEror(Model model){

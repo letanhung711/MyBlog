@@ -57,7 +57,7 @@ public class UserConfiguration extends WebSecurityConfigurerAdapter {
                 .formLogin()
                     .loginPage("/login")
                     .loginProcessingUrl("/do-login")
-                .defaultSuccessUrl("/admin/")
+                .defaultSuccessUrl("/admin/**")
                     .permitAll()
                     .and()
                 .logout()
